@@ -1,21 +1,21 @@
-# 模版脚手架下载工具
+# vue-game-cli
 
 ## 基本功能
 
-- 通过命令行方式进行模版配置 下载模版 生成模版基础文件
+- 通过命令行方式进行游戏配置
 
 ## 可用指令
-* 初始化构建项目
-- xtemcli init <project name>
+* 初始化项目目录
+- vue-game init <project name>
 
-* 构建模板同时更新npm组件包
-- xtemcli create <template name>
+* 构建游戏
+- vue-game create <template name>
 
 * 更新webpack配置文件
-- xtemcli update
+- vue-game update
 
 * 生成resource.json文件
-- xtemcli resource <template name>
+- vue-game resource <template name>
 
 
 ## 相关npm包
