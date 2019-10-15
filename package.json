@@ -1,7 +1,8 @@
 {
   "name": "vue-game-cli",
   "version": "1.0.2",
-  "description": "",
+  "description": "vue-game-cli",
+  "keywords": ["vue","webpack","pixi.js","cli"],
   "bin": {
     "vue-game": "index.js"
   },
