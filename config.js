@@ -1,6 +1,6 @@
-const gitUrl = 'https://github.com:ecma8/vue-game-basics.git#master';
-const templateUrl = 'https://github.com:ecma8/vue-game-template.git#master';
-const resourceUrl = 'https://github.com:ecma8/vue-game-resource.git#master';
+const gitUrl = 'https://github.com:ecma8/vue-game-basics#master';
+const templateUrl = 'https://github.com:ecma8/vue-game-template#master';
+const resourceUrl = 'https://github.com:ecma8/vue-game-resource#master';
 const templatePrompt =[
     {
         name: 'title',

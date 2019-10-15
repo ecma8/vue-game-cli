@@ -17,7 +17,7 @@ program.version('1.0.0', '-v, --version')
     .command('init <name>')
     .action((name) => {
         if(!fs.existsSync(name)){
-            const spinner = ora('正在下载模板...');
+            const spinner = ora('正在下载基础文件...');
             spinner.start();
             download(gitUrl,name,{clone:true},(err) => {
                 if(err){
@@ -39,7 +39,7 @@ program.version('1.0.0', '-v, --version')
     .action((name) => {
         if(!fs.existsSync(name)){
             inquirer.prompt(templatePrompt).then((answers) => {
-                const spinner = ora('🚀 正在下载模板...');
+                const spinner = ora('正在下载模板...');
                 spinner.start();
                 let createDir = `src/template/${name}`;
                 download(templateUrl,createDir,{clone:true},(err) => {
@@ -62,7 +62,7 @@ program.version('1.0.0', '-v, --version')
                         if(fs.existsSync(indexHtml)){
                             fs.writeFileSync(indexHtml,indexHtmlData);
                         }
-                        const spinner1 = ora('🚀 正在下载资源文件...');
+                        const spinner1 = ora('正在下载资源文件...');
                         spinner1.start();
                         let resourcePath = path.resolve(createDir,'../../../public/'+name);
                         let webpackDefault = __dirname+'/webpack/'.replace(/\\/g,'/');
@@ -101,25 +101,8 @@ program.version('1.0.0', '-v, --version')
                                 fs.writeFileSync(devServerPath,indexJS);
                                 let buildJS = fs.readFileSync(webpackDefault+'/build.js',{encoding:"utf-8"});
                                 fs.writeFileSync(buildPath,buildJS);
-
-                                const packageProgress = ora('🚀 cnpm i xtemplate-editor xes-answer xes-edit-https xes-tem-anend xes-tem-end xes-tem-pend -S');
-                                packageProgress.start();
-                                nodeCmd.get(
-                                    'cnpm i xtemplate-editor xes-answer xes-edit-https xes-tem-anend xes-tem-end xes-tem-pend -S',
-                                    function(err, data, stderr){
-                                        if(err){
-                                            packageProgress.fail();
-                                            console.log(chalk.red(`package update failed`));
-                                            console.log(chalk.blue(`$ npm run serve --dir=${name}`));
-
-                                        }else{
-                                            packageProgress.succeed();
-                                            console.log(chalk.green(`package update successful`));
-                                            console.log(chalk.blue(`$ npm run serve --dir=${name}`));
-                                        }
-                                    }
-                                );
-                                nodeCmd.run('cnpm i xtemplate-editor xes-answer xes-edit-https xes-tem-anend xes-tem-end xes-tem-pend -S');
+                                console.log(chalk.green(`package update successful`));
+                                console.log(chalk.blue(`$ npm run serve --dir=${name}`));
                             }
                         })
 
